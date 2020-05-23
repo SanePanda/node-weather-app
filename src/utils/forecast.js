@@ -13,7 +13,9 @@ const forecast = (latitude, longitude, callback) => {
             weatherData = body.current
             currentTemp = weatherData.temperature
             feelsLikeTemp = weatherData.feelslike
-            callback(undefined, "It is currently " + currentTemp + ". It feels like " + feelsLikeTemp + " ")
+            windSpeed = weatherData.wind_speed
+            pressure = weatherData.pressure
+            callback(undefined, "It is currently " + currentTemp + ". It feels like " + feelsLikeTemp  + ". The wind speed is " + windSpeed + " with an ambient pressure of " + pressure)
         }
     })
 }
